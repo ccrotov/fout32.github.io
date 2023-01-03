@@ -1,0 +1,49 @@
+<html>
+<head>
+<style>
+body, textarea, input, button {
+	background: #123456;
+    color: #ffffff;
+}
+</style>
+</head>
+<body>
+<h2>.:: SEND TO TELEGRAM BOT ::.</h2>
+token:&nbsp;<input type="text" id="token" value="" size=70><br><br>
+<form method="post" target="hfrm">
+chat_id:&nbsp;<input type="text" id="chat" name="chat_id" value="1013664558"><br><br>
+<textarea name="text" cols=40 rows=12>
+</textarea><br><br>
+<button onclick="snd()">Send</button>
+</form>
+<iframe name="hfrm" style="visibility:hidden"></iframe>
+
+<script type="text/javascript">
+
+document.getElementById('token').value = getCookie("token");
+document.getElementById('chat').value = getCookie("chat");
+
+function snd() {
+var token = document.getElementById('token').value;
+var chat = document.getElementById('chat').value;
+document.forms[0].action = "https://api.telegram.org/bot" + token + "/sendMessage";
+document.forms[0].submit();
+setCookie('token', token);
+setCookie('chat', chat);
+}
+
+function setCookie(name,val){
+  var exp = new Date ();
+  exp.setTime(exp.getTime() + (365 * 24 * 3600 * 1000));
+  document.cookie = name + "=" + val + "; expires=" + exp.toGMTString();
+}
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+</script>
+</body>
+</html>
