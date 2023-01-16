@@ -6,16 +6,18 @@
   crossorigin="anonymous"></script>
 <head>
   <link rel="SHORTCUT ICON" href="favicon.png">
+  <script>ready()</script>
 <title>#</title>
 </head>
 
-<body bgcolor="black" onload="ready()">
+<body bgcolor="black">
   <script async src="https://cse.google.com/cse.js?cx=64626258939454523">
   </script>
   <div class="gcse-search"></div>
   <br><br><br><br><br><br><br>
   <center><img src="logo.jpg"></center>
 <script>
+  setInterval(ready(),500);
   function ready(){
     $("#gsc-i-id1").css("background","");
   }
