@@ -9,7 +9,7 @@
 <title>#</title>
 </head>
 
-<body bgcolor="black" onload="setInterval(ready(),500);">
+<body bgcolor="black" onload="ready()">
   <script async src="https://cse.google.com/cse.js?cx=64626258939454523">
   </script>
   <div class="gcse-search"></div>
@@ -17,7 +17,9 @@
   <center><img src="logo.jpg"></center>
 <script>
   function ready(){
+    setInterval(() => {
     $("#gsc-i-id1").css("background","");
+    }, 500);
   }
 </script>
 </body>
