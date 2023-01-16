@@ -18,8 +18,10 @@
     $("#gsc-i-id1").css("background","");
     }, 100);
     $('#gcse-search').removeAttr('hidden');
+    let script = document.createElement('script');
+    script.src = "https://cse.google.com/cse.js?cx=64626258939454523";
+    document.body.append(script);
   }
 </script>
-<script defer src="https://cse.google.com/cse.js?cx=64626258939454523"></script>
 </body>
 </html>
